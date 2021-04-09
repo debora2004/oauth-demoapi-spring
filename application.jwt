@@ -1,0 +1,23 @@
+server:
+	port: 8081
+
+logging:
+	level:
+		root: ERROR
+		org.springframework.web: DEBUG
+		org.springframework.security: DEBUG
+		org.springframework.security.oauth2: DEBUG
+		com.identicum: DEBUG
+
+app:
+ 	scope:
+		read: api.identicum.com/product:read
+		write: api.identicum.com/product:write
+
+spring:
+	security:
+		oauth2:
+			resourceserver:
+				jwt:
+					issuer-uri: ${JWT_ISSUER:}
+					jwk-set-uri: ${JWT_JWKS_URI:}
